@@ -20,4 +20,52 @@
   <%= @issue.thermostat_id %>
 </p>
 
+
+
+
+
+<h1><b>observaciones</b></h1>
+      <table class="table table-striped"><thead>
+          <tr class="info">
+          <td><b>#User</b></td>
+          <th></th>
+          <td><b>Email</b></td>
+          <td><b>Observacion</b></td>
+          <td><b>Created At</b></td>
+
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+              
+      <td> <% @observacions.each do |h| %>
+          <tr>
+             <th> <td><%= current_user.email %></td><td></th>
+            <% if @issue.id == h.issue_id %>
+            <th><td><%= h.text  %></td> </th>
+       <th>       <td><%= @issue.created_at %></td> </th>
+                    <td><%= link_to 'Like', like_observacion_path(h), :class =>"btn btn-info" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </td>   
+ 
+
+          
+        </tbody>
+      </table>
+    
+
+
+
+
+
+
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
+ <a href= "/observacions/new/<%= @issue.id %> " class = "btn btn-default">Nueva observacion </a>|
+

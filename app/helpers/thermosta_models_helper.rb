@@ -1,0 +1,2 @@
+module ThermostaModelsHelper
+end

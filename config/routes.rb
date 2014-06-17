@@ -1,5 +1,11 @@
 ThermMonitor::Application.routes.draw do
 
+  resources :observacions
+
+  resources :thermosta_models
+
+  resources :thermostat_models
+
   resources :authentications
   devise_for :users, path_names: {sign_in: "login"},
                         controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
@@ -63,9 +69,13 @@ ThermMonitor::Application.routes.draw do
    get '/schedules/index/:thermostat_id/alarms/new' => 'alarms#new'
    post '/schedules/index/:thermostat_id/alarms/new ' => 'alarms#create'
     
-
+ get '/admi/thermosta_models/new/:id' => 'thermostas#new'
+ post '/admi/thermosta_models/new/:id ' => 'thermostas#create'
+   
+   get '/observacions/new/:issue_id' => 'observacions#new'
+   post '/observacions/new/:issue_id ' => 'observacions#create'
   
-
+get '/issues/show/like_observacion/:id' => 'observacions#like_observacion', :as => 'like_observacion'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

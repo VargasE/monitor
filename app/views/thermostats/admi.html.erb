@@ -90,6 +90,9 @@
             <td><a href="<%= edit_thermostat_path(thermostat) %>" class="btn btn-primary"><b>Edit</b></a></td>
             <td><a href="/thermostats/destroy/<%= thermostat.id %>" class="btn btn-danger"><b>Delete</b></a></td>
             
+            <td><a href="/thermosta_models/new/<%= thermostat.id %>" class="btn btn-warning">CrearModelo</a></td>
+
+
             <% end %>
           </tr>
       </tbody>
@@ -157,6 +160,5 @@
         </tr>
     </tbody>
   </table>
-
 
 

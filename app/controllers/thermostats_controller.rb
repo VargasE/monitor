@@ -38,6 +38,11 @@ class ThermostatsController < ApplicationController #controlador del termostato
    end
 end
 
+
+def CrearModelo
+  
+end
+
   def unlock
      if if_current_admi
    @user=User.find(params[:id])

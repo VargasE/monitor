@@ -20,7 +20,8 @@
              <td id="status<%=issue.id%>"><%= issue.status%></td>
              <td><%= issue.resolution %></td>
              <td class="button_cancelar" id="<%= issue.id %>"><button>Cancel Problem</button></td>
-             
+             <td><%= link_to 'Show', issue %></td>
+
        <%end%>
         </tr>
       <% end %>

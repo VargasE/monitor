@@ -1,0 +1,29 @@
+<h1>Listing thermosta_models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Thermostat</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thermosta_models.each do |thermosta_model| %>
+      <tr>
+        <td><%= thermosta_model.name %></td>
+        <td><%= thermosta_model.thermostat %></td>
+        <td><%= link_to 'Show', thermosta_model %></td>
+        <td><%= link_to 'Edit', edit_thermosta_model_path(thermosta_model) %></td>
+        <td><%= link_to 'Destroy', thermosta_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thermosta model', new_thermosta_model_path %>

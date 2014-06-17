@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @thermosta_model.name %>
+</p>
+
+<p>
+  <strong>Thermostat:</strong>
+  <%= @thermosta_model.thermostat %>
+</p>
+
+<%= link_to 'Edit', edit_thermosta_model_path(@thermosta_model) %> |
+<%= link_to 'Back', thermosta_models_path %>

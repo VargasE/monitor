@@ -10,6 +10,7 @@ class IssuesController < ApplicationController #controlador de los problemas del
     @id_therm=@id_therm.to_i
     if @id_therm != 0
       @issues = Issue.all
+      @observacions=Observacion.all 
   else
     redirect_to '/'
   end
@@ -19,6 +20,7 @@ class IssuesController < ApplicationController #controlador de los problemas del
   # GET /issues/1.json
   def show
      #issues_permissions
+     @observacions=Observacion.all 
   end
 
   def cancel
@@ -46,6 +48,9 @@ class IssuesController < ApplicationController #controlador de los problemas del
     redirect_to '/'
   end
   end
+
+
+
 
   # GET /issues/new
   def new
